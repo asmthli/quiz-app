@@ -2,20 +2,20 @@ import PropTypes from 'prop-types'
 import {
     button,
     image
-} from './SubjectButton.module.css'
+} from './SelectableChoice.module.css'
 
-SubjectButton.propTypes = {
-    subject: PropTypes.string.isRequired,
+SelectableChoice.propTypes = {
+    choice: PropTypes.string.isRequired,
     imgPath: PropTypes.string.isRequired
 }
 
-function SubjectButton( {subject, imgPath} ) {
+function SelectableChoice({choice, imgPath}) {
     return (
         <button className={button}>
             <img className={image} src={imgPath} />
-            {subject}
+            {choice}
         </button>
     )
 }
 
-export default SubjectButton
+export default SelectableChoice

@@ -1,4 +1,4 @@
-import SubjectButton from "../primitives/SubjectButton/SubjectButton.jsx"
+import SelectableChoice from "../primitives/SelectableChoice/SelectableChoice.jsx"
 import htmlImg from '/images/icon-html.svg'
 import cssImg from '/images/icon-css.svg'
 import jsImg from '/images/icon-js.svg'
@@ -14,19 +14,19 @@ function StartMenu() {
             <ToggleSwitch />
 
             <div>
-                <SubjectButton 
+                <SelectableChoice 
                     subject="HTML"
                     imgPath={htmlImg}
                 />
-                <SubjectButton 
+                <SelectableChoice 
                     subject="CSS"
                     imgPath={cssImg}
                 />
-                <SubjectButton 
+                <SelectableChoice 
                     subject="JavaScript"
                     imgPath={jsImg}
                 />
-                <SubjectButton 
+                <SelectableChoice 
                     subject="Accessibility"
                     imgPath={accessibilityImg}
                 />
