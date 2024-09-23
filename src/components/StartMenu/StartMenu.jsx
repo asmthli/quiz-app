@@ -5,7 +5,7 @@ import jsImg from '/images/icon-js.svg'
 import accessibilityImg from '/images/icon-accessibility.svg'
 import ToggleSwitch from "../primitives/ToggleSwitch/ToggleSwitch.jsx"
 
-function StartMenu() {
+function StartMenu({setQuizSubject}) {
     return (
         <div className="start-menu">
             <h1>Welcome to the <span>Frontend Quiz!</span></h1>
@@ -15,20 +15,24 @@ function StartMenu() {
 
             <div>
                 <SelectableChoice 
-                    subject="HTML"
+                    choice="HTML"
                     imgPath={htmlImg}
+                    setQuizSubject={setQuizSubject}
                 />
                 <SelectableChoice 
-                    subject="CSS"
+                    choice="CSS"
                     imgPath={cssImg}
+                    setQuizSubject={setQuizSubject}
                 />
                 <SelectableChoice 
-                    subject="JavaScript"
+                    choice="JavaScript"
                     imgPath={jsImg}
+                    setQuizSubject={setQuizSubject}
                 />
                 <SelectableChoice 
-                    subject="Accessibility"
+                    choice="Accessibility"
                     imgPath={accessibilityImg}
+                    setQuizSubject={setQuizSubject}
                 />
             </div>
         </div>

@@ -6,12 +6,18 @@ import {
 
 SelectableChoice.propTypes = {
     choice: PropTypes.string.isRequired,
-    imgPath: PropTypes.string.isRequired
+    imgPath: PropTypes.string.isRequired,
+    setQuizStarted: PropTypes.func.isRequired
 }
 
-function SelectableChoice({choice, imgPath}) {
+function SelectableChoice({choice, imgPath, setQuizSubject}) {
     return (
-        <button className={button}>
+        <button 
+            className={button}
+            onClick={() => {
+                setQuizSubject(choice)
+            }}
+        >
             <img className={image} src={imgPath} />
             {choice}
         </button>

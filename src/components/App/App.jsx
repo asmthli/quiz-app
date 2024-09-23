@@ -1,14 +1,13 @@
 import './App.module.css'
 import StartMenu from '../StartMenu/StartMenu.jsx'
-import MultipleChoice from '../MultipleChoice/MultipleChoice.jsx'
+import Quiz from '../Quiz/Quiz.jsx'
+import { useState } from 'react'
 
 function App() {
+  const [quizSubject, setQuizSubject] = useState('')
 
   return (
-    <>
-      <StartMenu />
-      <MultipleChoice />
-    </>
+    quizSubject ? <Quiz subject={quizSubject} /> : <StartMenu setQuizSubject={setQuizSubject}/>
   )
 }
 

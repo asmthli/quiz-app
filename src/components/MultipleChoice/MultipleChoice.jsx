@@ -1,12 +1,17 @@
 import MultipleChoiceAnswer from "../primitives/MultipleChoiceAnswer/MultipleChoiceAnswer.jsx"
 
-function MultipleChoice() {
+function MultipleChoice({choices}) {
+    const answerComponents = []
+    const letters = ['G', 'F', 'E', 'D', 'C', 'B', 'A']
+
+    for (let choice of choices) {
+        const answer = <MultipleChoiceAnswer letter={letters.pop()} choice={choice} />
+        answerComponents.push(answer)
+    }
+
     return (
         <ul>
-            <MultipleChoiceAnswer letter="A" choice="Test 1" />
-            <MultipleChoiceAnswer letter="B" choice="Test 2" />
-            <MultipleChoiceAnswer letter="C" choice="Test 3" />
-            <MultipleChoiceAnswer letter="D" choice="Test 4" />
+            {answerComponents}
         </ul>
     )
 }
