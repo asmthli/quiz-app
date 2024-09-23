@@ -1,4 +1,4 @@
-import './App.css'
+import './App.module.css'
 import StartMenu from '../StartMenu/StartMenu.jsx'
 
 function App() {

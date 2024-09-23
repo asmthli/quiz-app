@@ -1,0 +1,43 @@
+.toggleSwitch {
+    --width: 10em;
+    --height: calc(var(--width) * 0.5);
+
+    position: relative;
+
+    width: var(--width);
+    height: var(--height);
+    border: 2px solid;
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: inherit;
+    border-radius: calc(var(--height) * 0.5);
+    color: inherit;
+    cursor: pointer;
+}
+
+.toggleSwitch::before {
+    --circle-size: calc(var(--height) * 0.8);
+
+    position: absolute;
+    top: 50%;
+    /* Make the circle and the switch border concentric */
+    left: calc(var(--height) * 0.5 - var(--circle-size) * 0.5);
+
+    transform: translate(0, -50%);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+
+    content: "";
+    border-radius: 50%;
+    background-color: black;
+    transition: 0.3s
+}
+
+.toggleSwitch:checked::before {
+    /* Used left values only instead of using 'right' so transition works */
+    left: calc(100% - (var(--height) * 0.5 - var(--circle-size) * 0.5));
+    transform: translate(-100%, -50%);
+}
