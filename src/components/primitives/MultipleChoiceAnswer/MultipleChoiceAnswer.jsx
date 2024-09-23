@@ -1,9 +1,11 @@
 import styles from './MultipleChoiceAnswer.module.css'
 
-function MultipleChoiceAnswer({letter, choice}) {
+function MultipleChoiceAnswer({letter, choice, setQuestionIndex}) {
     return (
        <li>
-            <button>
+            <button
+                onClick={() => setQuestionIndex(index => index + 1)}
+            >
                 {letter}
                 {choice}
             </button>
