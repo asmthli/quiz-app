@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Rubik Medium';
+    src: url('./fonts/static/Rubik-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Rubik Italic';
+    src: url('./fonts/static/Rubik-Italic.ttf');
+}
+
+body {
+    --clr-purple: #A729F5;
+    --clr-green: #26D782;
+    --clr-red: #EE5454;
+
+    --clr-white: #FFFFFF;
+    --clr-grey-100: #F4F6FA;
+    --clr-grey-200: #ABC1E1;
+    --clr-grey-300: #626C7F;
+    --clr-grey-400: #3B4D66;
+    --clr-grey-500: #313E51;
+
+    /* Fonts */
+    --font-display: 9rem/1 'Rubik Medium', sans-serif;
+    --font-heading-lrg-bold: 4rem/1 'Rubik Medium', sans-serif;
+    --font-heading-lrg-regular: 4rem/1 'Rubik Medium', sans-serif;
+    --font-heading-med: 2.25rem/1 'Rubik Medium', sans-serif;
+    --font-heading-sm: 1.75rem/1 'Rubik Medium', sans-serif;
+    --font-body-med: 0.75rem/1.5 'Rubik Medium', sans-serif;
+    --font-body-sm: 0.75rem/1.5 'Rubik Italic', sans-serif;
+}
