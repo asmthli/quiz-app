@@ -7,7 +7,7 @@ import {
 SelectableChoice.propTypes = {
     choice: PropTypes.string.isRequired,
     imgPath: PropTypes.string.isRequired,
-    setQuizStarted: PropTypes.func.isRequired
+    setQuizSubject: PropTypes.func.isRequired
 }
 
 function SelectableChoice({choice, imgPath, setQuizSubject}) {

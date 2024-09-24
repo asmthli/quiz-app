@@ -1,11 +1,16 @@
-import styles from './MultipleChoiceAnswer.module.css'
+import PropTypes from 'prop-types'
 
-function MultipleChoiceAnswer({letter, choice, setQuestionIndex}) {
+MultipleChoiceAnswer.propTypes = {
+    letter: PropTypes.string.isRequired,
+    choice: PropTypes.string.isRequired,
+    setChosenAnswer: PropTypes.func.isRequired
+}
+
+function MultipleChoiceAnswer({letter, choice, setChosenAnswer}) {
     return (
        <li>
             <button
-                onClick={() => setQuestionIndex(index => index + 1)}
-            >
+                onClick={() => setChosenAnswer(choice)}>
                 {letter}
                 {choice}
             </button>

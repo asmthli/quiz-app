@@ -7,7 +7,14 @@ function App() {
   const [quizSubject, setQuizSubject] = useState('')
 
   return (
-    quizSubject ? <Quiz subject={quizSubject} /> : <StartMenu setQuizSubject={setQuizSubject}/>
+    quizSubject ? 
+    <Quiz 
+      subject={quizSubject} 
+      setQuizSubject={setQuizSubject} 
+    /> : 
+    <StartMenu 
+      setQuizSubject={setQuizSubject}
+    />
   )
 }
 
