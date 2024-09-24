@@ -1,0 +1,37 @@
+.quizMenu {
+    display: grid;
+    align-items: start;
+    justify-content: center;
+    column-gap: 6rem;
+    row-gap: 2rem;
+}
+
+.header {
+    font: var(--font-heading-lrg-regular)
+}
+
+.header span {
+    display: block;
+
+    font: var(--font-heading-lrg-bold);
+}
+
+.body {
+    font: var(--font-body-sm);
+}
+
+.subjectList {
+    grid-row: 2 / span 2;;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.toggle {
+    justify-self: end;
+
+    grid-row: 1;
+    grid-column: 1 / span 2;;
+    font-size: 0.5rem;
+}

@@ -1,8 +1,12 @@
 import {toggleSwitch} from './ToggleSwitch.module.css'
 
-function ToggleSwitch() {
+function ToggleSwitch({className}) {
     return (
-        <input className={toggleSwitch} type="checkbox" role="switch" />
+        <input 
+            className={toggleSwitch + " " + className} 
+            type="checkbox" 
+            role="switch" 
+        />
     )
 }
 

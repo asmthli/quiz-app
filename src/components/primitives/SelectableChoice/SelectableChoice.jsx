@@ -10,7 +10,11 @@ SelectableChoice.propTypes = {
     setQuizSubject: PropTypes.func.isRequired
 }
 
-function SelectableChoice({choice, imgPath, setQuizSubject}) {
+function SelectableChoice({choice, imgPath, setQuizSubject, iconBgColor}) {
+    const imgStyle = {
+        '--iconBgColor': iconBgColor
+    }
+
     return (
         <button 
             className={button}
@@ -18,7 +22,7 @@ function SelectableChoice({choice, imgPath, setQuizSubject}) {
                 setQuizSubject(choice)
             }}
         >
-            <img className={image} src={imgPath} />
+            <img className={image} src={imgPath} style={imgStyle} />
             {choice}
         </button>
     )

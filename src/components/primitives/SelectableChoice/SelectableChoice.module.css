@@ -1,7 +1,19 @@
 .button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     
+    width: 40rem;
+    padding: 1rem;
+
+    font: var(--font-heading-sm);
+    border-radius: 10px;
+    background-color: var(--background-color);
 }
 
 .image {
-    
+    padding: 0.5rem;
+
+    border-radius: 5px;
+    background-color: var(--iconBgColor);
 }
