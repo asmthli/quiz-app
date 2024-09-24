@@ -12,6 +12,7 @@ function Quiz({subject, setQuizSubject}) {
     const [questionIndex, setQuestionIndex] = useState(0)
     const [score, setScore] = useState(0)
     const [chosenAnswer, setChosenAnswer] = useState('')
+    const [showAnswer, setShowAnswer] = useState(false)
 
     const subjectData = data.quizzes.filter(quiz => quiz.title === subject)[0]
     const subjectIconUrl = subjectData.icon
@@ -19,6 +20,15 @@ function Quiz({subject, setQuizSubject}) {
     const question = subjectData.questions[questionIndex].question
     const options = subjectData.questions[questionIndex].options
     const answer = subjectData.questions[questionIndex].answer
+
+    const buttonStates = {}
+    if (showAnswer) {
+        // If the chosen answer is right, its value will be overwritten with 'correct'.
+        buttonStates[chosenAnswer] = 'incorrect'
+        buttonStates[answer] = 'correct'
+    } else {
+        buttonStates[chosenAnswer] = 'selected'
+    }
 
     function handleSubmit() {
         if (!chosenAnswer) {
@@ -30,19 +40,32 @@ function Quiz({subject, setQuizSubject}) {
             setScore(score + 1)
         }
 
-        setQuestionIndex(questionIndex + 1)
-        setChosenAnswer('')
+        setShowAnswer(true)
     }
 
-    if (questionIndex < 9) {
+    function handleNext() {
+        setQuestionIndex(questionIndex + 1)
+        setChosenAnswer('')
+        setShowAnswer(false)
+    }
+
+    const quizRunning = questionIndex < 9
+    if (quizRunning) {
         return (
             <>
                 <img src={subjectIconUrl} />
                 <h1>{subjectData.title}</h1>
                 <h2>Question {questionIndex + 1} of 10</h2>
                 <p>{question}</p>
-                <MultipleChoice choices={options} setChosenAnswer={setChosenAnswer} />
-                <button onClick={handleSubmit}>Submit Answer</button>
+                <MultipleChoice 
+                    choices={options} 
+                    setChosenAnswer={setChosenAnswer} 
+                    buttonStates={buttonStates} 
+                />
+                {showAnswer ? 
+                    <button onClick={handleNext}>Next Question</button> :
+                    <button onClick={handleSubmit}>Submit Answer</button>
+                }
             </>
         )
     } else {

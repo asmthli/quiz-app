@@ -1,18 +1,29 @@
 import PropTypes from 'prop-types'
+import correctImg from '/images/icon-correct.svg'
+import incorrectImg from '/images/icon-incorrect.svg'
 
 MultipleChoiceAnswer.propTypes = {
     letter: PropTypes.string.isRequired,
     choice: PropTypes.string.isRequired,
-    setChosenAnswer: PropTypes.func.isRequired
+    setChosenAnswer: PropTypes.func.isRequired,
+    state: PropTypes.string
 }
 
-function MultipleChoiceAnswer({letter, choice, setChosenAnswer}) {
+function MultipleChoiceAnswer({letter, choice, setChosenAnswer, state}) {
+    let stateImage;
+    if (state === 'correct') {
+        stateImage = <img src={correctImg} />
+    } else if (state === 'incorrect') {
+        stateImage = <img src={incorrectImg} />
+    }
+
     return (
        <li>
             <button
                 onClick={() => setChosenAnswer(choice)}>
                 {letter}
                 {choice}
+                {stateImage}
             </button>
        </li>
     )

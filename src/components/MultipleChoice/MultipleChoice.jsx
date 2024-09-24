@@ -3,12 +3,15 @@ import MultipleChoiceAnswer from "../primitives/MultipleChoiceAnswer/MultipleCho
 
 MultipleChoice.propTypes = {
     choices: PropTypes.arrayOf(PropTypes.string),
-    setChosenAnswer: PropTypes.func.isRequired
+    setChosenAnswer: PropTypes.func.isRequired,
+    buttonStates: PropTypes.objectOf(PropTypes.string)
 }
 
-function MultipleChoice({choices, setChosenAnswer}) {
+function MultipleChoice({choices, setChosenAnswer, buttonStates}) {
     const answerComponents = []
     const letters = ['G', 'F', 'E', 'D', 'C', 'B', 'A']
+
+    console.log(buttonStates)
 
     for (let choice of choices) {
         const answer = 
@@ -17,6 +20,7 @@ function MultipleChoice({choices, setChosenAnswer}) {
             letter={letters.pop()} 
             choice={choice}
             setChosenAnswer={setChosenAnswer}
+            state={buttonStates[choice]}
         />
         
         answerComponents.push(answer)
