@@ -6,10 +6,16 @@ MultipleChoiceAnswer.propTypes = {
     letter: PropTypes.string.isRequired,
     choice: PropTypes.string.isRequired,
     setChosenAnswer: PropTypes.func.isRequired,
-    state: PropTypes.string
+    state: PropTypes.string,
+    setShowError: PropTypes.func.isRequired
 }
 
-function MultipleChoiceAnswer({letter, choice, setChosenAnswer, state}) {
+function MultipleChoiceAnswer({letter, choice, setChosenAnswer, state, setShowError}) {
+    function handleClick() {
+        setChosenAnswer(choice)
+        setShowError(false)
+    }
+
     let stateImage;
     if (state === 'correct') {
         stateImage = <img src={correctImg} />
@@ -20,7 +26,7 @@ function MultipleChoiceAnswer({letter, choice, setChosenAnswer, state}) {
     return (
        <li>
             <button
-                onClick={() => setChosenAnswer(choice)}>
+                onClick={handleClick}>
                 {letter}
                 {choice}
                 {stateImage}

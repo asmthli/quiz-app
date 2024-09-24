@@ -13,6 +13,7 @@ function Quiz({subject, setQuizSubject}) {
     const [score, setScore] = useState(0)
     const [chosenAnswer, setChosenAnswer] = useState('')
     const [showAnswer, setShowAnswer] = useState(false)
+    const [showError, setShowError] = useState(false)
 
     const subjectData = data.quizzes.filter(quiz => quiz.title === subject)[0]
     const subjectIconUrl = subjectData.icon
@@ -32,7 +33,7 @@ function Quiz({subject, setQuizSubject}) {
 
     function handleSubmit() {
         if (!chosenAnswer) {
-            console.log("please choose an answer")
+            setShowError(true);
             return
         } 
         
@@ -57,15 +58,21 @@ function Quiz({subject, setQuizSubject}) {
                 <h1>{subjectData.title}</h1>
                 <h2>Question {questionIndex + 1} of 10</h2>
                 <p>{question}</p>
+                
+                <label htmlFor="progress">Quiz Progress</label>
+                <progress id="progress" max="10" value={questionIndex} />
+
                 <MultipleChoice 
                     choices={options} 
                     setChosenAnswer={setChosenAnswer} 
-                    buttonStates={buttonStates} 
+                    buttonStates={buttonStates}
+                    setShowError={setShowError}
                 />
                 {showAnswer ? 
                     <button onClick={handleNext}>Next Question</button> :
                     <button onClick={handleSubmit}>Submit Answer</button>
                 }
+                {showError ? <p aria-live='polite'>Please select an answer</p> : null}
             </>
         )
     } else {
