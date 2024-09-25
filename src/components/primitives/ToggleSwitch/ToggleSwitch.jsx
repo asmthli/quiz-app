@@ -24,6 +24,7 @@ function ToggleSwitch({className}) {
                 className={toggleSwitch} 
                 type="checkbox" 
                 role="switch" 
+                value="dark theme"
                 onClick={toggleTheme}
             />
             <img src={moonImg} alt="dark setting"/>
