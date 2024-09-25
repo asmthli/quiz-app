@@ -1,5 +1,11 @@
+.toggleContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .toggleSwitch {
-    --width: 10em;
+    --width: 7em;
     --height: calc(var(--width) * 0.5);
 
     position: relative;
@@ -15,6 +21,8 @@
     border-radius: calc(var(--height) * 0.5);
     color: inherit;
     cursor: pointer;
+    background-color: var(--clr-purple);
+    border: none;
 }
 
 .toggleSwitch::before {
@@ -31,8 +39,8 @@
     height: var(--circle-size);
 
     content: "";
+    background-color: white;
     border-radius: 50%;
-    background-color: black;
     transition: 0.3s
 }
 

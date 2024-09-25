@@ -9,7 +9,9 @@
     font: var(--font-heading-sm);
     border-radius: 10px;
     background-color: var(--background-color);
+    cursor: pointer;
 }
+
 
 .image {
     padding: 0.5rem;
