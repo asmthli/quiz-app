@@ -12,25 +12,41 @@ import { ThemeContext } from "../../../contexts/themeContext"
  */
 
 function Themer({children}) {
-    const [theme, setTheme] = useState('light')
+    const [themeName, setThemeName] = useState('light')
 
+    const themes = {
+        light: {
+            'buttonBgColor': 'white',
+            'fontColorPrimary': 'navy',
+            'fontColorSecondary': 'lightslategray',
+            'backgroundImg': 'url(/images/pattern-background-desktop-light.svg)',
+            'backgroundColor': 'white'
+
+        },
+        dark: {
+            'buttonBgColor': 'navy',
+            'fontColorPrimary': 'white',
+            'fontColorSecondary': 'lightsteelblue',
+            'backgroundImg': 'url(/images/pattern-background-desktop-dark.svg)',
+            'backgroundColor': '#313E51'
+        }
+    }
+
+    const theme = themes[themeName]
+    
     useEffect(() => {
-        console.log("Changing theme. Theme is now ", theme)
-
-        if (theme === 'light') {
-            // Applying styles to the document root element
-            document.documentElement.style.setProperty('--testColor', 'lightpink')
-        } else if (theme === 'dark') {
-            document.documentElement.style.setProperty('--testColor', 'purple')
+        // Applying styles to the document root element
+        for (const property in theme) {
+            document.documentElement.style.setProperty(`--${property}`, theme[property])
         }
     })
 
     function toggleTheme() {
-        theme === 'light' ? setTheme('dark') : setTheme('light') 
+        themeName === 'light' ? setThemeName('dark') : setThemeName('light') 
       }
 
     return (
-        <ThemeContext.Provider value={{theme, toggleTheme}}>
+        <ThemeContext.Provider value={{themeName, toggleTheme}}>
             {children}
         </ThemeContext.Provider>
     )

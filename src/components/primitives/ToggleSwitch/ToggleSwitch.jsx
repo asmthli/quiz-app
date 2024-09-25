@@ -7,12 +7,12 @@ import { useContext } from 'react'
 import { ThemeContext } from '../../../contexts/themeContext'
 
 function ToggleSwitch({className}) {
-    const {theme, toggleTheme} = useContext(ThemeContext)
+    const {themeName, toggleTheme} = useContext(ThemeContext)
 
     let sunImg = lightModeSun
     let moonImg = lightModeMoon
 
-    if (theme === 'dark') {
+    if (themeName === 'dark') {
         sunImg = darkModeSun
         moonImg = darkModeMoon
     }

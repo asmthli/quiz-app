@@ -42,7 +42,9 @@ body {
     align-items: center;
     justify-content: center;
 
-    background-color: var(--testColor);
+    background-image: var(--backgroundImg);
+    background-size: cover;
+    background-color: var(--backgroundColor);
 }
 
 h1,
