@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container:last-child {
+    margin: auto;
+}
+
+.title {
+    font: var(--font-heading-sm);
+}

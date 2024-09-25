@@ -8,8 +8,9 @@
 
     font: var(--font-heading-sm);
     border-radius: 10px;
-    background-color: var(--background-color);
+    background-color: var(--buttonBgColor);
     cursor: pointer;
+    border: none;
 }
 
 

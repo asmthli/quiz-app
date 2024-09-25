@@ -20,7 +20,7 @@ function Themer({children}) {
             'fontColorPrimary': 'navy',
             'fontColorSecondary': 'lightslategray',
             'backgroundImg': 'url(/images/pattern-background-desktop-light.svg)',
-            'backgroundColor': 'white'
+            'backgroundColor': '#F4F6FA'
 
         },
         dark: {

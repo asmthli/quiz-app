@@ -5,7 +5,7 @@
 }
 
 .toggleSwitch {
-    --width: 7em;
+    --width: 4em;
     --height: calc(var(--width) * 0.5);
 
     position: relative;

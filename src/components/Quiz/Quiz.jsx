@@ -2,6 +2,8 @@ import { useState } from 'react'
 import PropTypes from 'prop-types'
 import data from '../../data.json'
 import MultipleChoice from '../MultipleChoice/MultipleChoice.jsx'
+import Header from '../Header/Header.jsx'
+import styles from './Quiz.module.css'
 
 Quiz.propTypes = {
     subject: PropTypes.string.isRequired,
@@ -16,7 +18,6 @@ function Quiz({subject, setQuizSubject}) {
     const [showError, setShowError] = useState(false)
 
     const subjectData = data.quizzes.filter(quiz => quiz.title === subject)[0]
-    const subjectIconUrl = subjectData.icon
 
     const question = subjectData.questions[questionIndex].question
     const options = subjectData.questions[questionIndex].options
@@ -54,13 +55,12 @@ function Quiz({subject, setQuizSubject}) {
     if (quizRunning) {
         return (
             <>
-                <img src={subjectIconUrl} />
-                <h1>{subjectData.title}</h1>
-                <h2>Question {questionIndex + 1} of 10</h2>
-                <p>{question}</p>
+                <Header titleIcon={subjectData.icon} title={subjectData.title} />
+                <h2 className={styles.questionNumber}>Question {questionIndex + 1} of 10</h2>
+                <p className={styles.question}>{question}</p>
                 
-                <label htmlFor="progress">Quiz Progress</label>
-                <progress id="progress" max="10" value={questionIndex} />
+                <label className={styles.progressLabel} htmlFor="progress">Quiz Progress</label>
+                <progress className={styles.progress} id="progress" max="10" value={questionIndex} />
 
                 <MultipleChoice 
                     choices={options} 
@@ -78,8 +78,7 @@ function Quiz({subject, setQuizSubject}) {
     } else {
         return (
             <>
-                <img src={subjectIconUrl} />
-                <h1>{subjectData.title}</h1>
+                <Header titleIcon={subjectData.icon} title={subjectData.title} />
 
                 <h2>Quiz completed</h2>
                 <p>You scored...</p>
