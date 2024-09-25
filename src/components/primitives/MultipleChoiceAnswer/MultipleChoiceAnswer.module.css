@@ -1,0 +1,30 @@
+.button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    width: 100%;
+    padding: 1rem;
+
+    background-color: var(--buttonBgColor);
+    border: none;
+    border-radius: 16px;
+    font: var(--font-heading-sm)
+}
+
+.button:hover {
+    cursor: pointer;
+    outline: 2px solid lime;
+}
+
+.letter {
+    padding: 0.5rem;
+
+    background-color: var(--fontColorSecondary);
+    border-radius: 6px;
+}
+
+.image {
+    margin: auto;
+    margin-inline-end: 0;
+}

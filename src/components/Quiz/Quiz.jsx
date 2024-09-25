@@ -56,23 +56,25 @@ function Quiz({subject, setQuizSubject}) {
         return (
             <>
                 <Header titleIcon={subjectData.icon} title={subjectData.title} />
-                <h2 className={styles.questionNumber}>Question {questionIndex + 1} of 10</h2>
-                <p className={styles.question}>{question}</p>
-                
-                <label className={styles.progressLabel} htmlFor="progress">Quiz Progress</label>
-                <progress className={styles.progress} id="progress" max="10" value={questionIndex} />
-
-                <MultipleChoice 
-                    choices={options} 
-                    setChosenAnswer={setChosenAnswer} 
-                    buttonStates={buttonStates}
-                    setShowError={setShowError}
-                />
-                {showAnswer ? 
-                    <button onClick={handleNext}>Next Question</button> :
-                    <button onClick={handleSubmit}>Submit Answer</button>
-                }
-                {showError ? <p aria-live='polite'>Please select an answer</p> : null}
+                <main className={styles.container}>
+                    <h2 className={styles.questionNumber}>Question {questionIndex + 1} of 10</h2>
+                    <p className={styles.question}>{question}</p>
+                    
+                    <label className={styles.progressLabel} htmlFor="progress">Quiz Progress</label>
+                    <progress className={styles.progress} id="progress" max="10" value={questionIndex} />
+                    <MultipleChoice
+                        choices={options}
+                        setChosenAnswer={setChosenAnswer}
+                        buttonStates={buttonStates}
+                        setShowError={setShowError}
+                        className={styles.multipleChoice}
+                    />
+                    {showAnswer ?
+                        <button className={styles.button} onClick={handleNext}>Next Question</button> :
+                        <button className={styles.button} onClick={handleSubmit}>Submit Answer</button>
+                    }
+                    {showError ? <p aria-live='polite'>Please select an answer</p> : null}
+                </main>
             </>
         )
     } else {
@@ -80,19 +82,18 @@ function Quiz({subject, setQuizSubject}) {
             <>
                 <Header titleIcon={subjectData.icon} title={subjectData.title} />
 
-                <h2>Quiz completed</h2>
-                <p>You scored...</p>
-
-                <div>
-                    <img src={subjectIconUrl} />
-                    <h3>{subjectData.title}</h3>
-
-                    <p>{score} <span>out of 10</span></p>
-                </div>
-
-                <button onClick={() => setQuizSubject('')}>
-                    Play Again
-                </button>
+                <main>
+                    <h2>Quiz completed</h2>
+                    <p>You scored...</p>
+                    <div>
+                        <img src={subjectData.icon} />
+                        <h3>{subjectData.title}</h3>
+                        <p>{score} <span>out of 10</span></p>
+                    </div>
+                    <button className={styles.button} onClick={() => setQuizSubject('')}>
+                        Play Again
+                    </button>
+                </main>
             </>
         )
     }

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import MultipleChoiceAnswer from "../primitives/MultipleChoiceAnswer/MultipleChoiceAnswer.jsx"
+import styles from './MultipleChoice.module.css'
 
 MultipleChoice.propTypes = {
     choices: PropTypes.arrayOf(PropTypes.string),
@@ -8,7 +9,7 @@ MultipleChoice.propTypes = {
     setShowError: PropTypes.func.isRequired
 }
 
-function MultipleChoice({choices, setChosenAnswer, buttonStates, setShowError}) {
+function MultipleChoice({choices, setChosenAnswer, buttonStates, setShowError, className}) {
     const answerComponents = []
     const letters = ['G', 'F', 'E', 'D', 'C', 'B', 'A']
 
@@ -27,7 +28,7 @@ function MultipleChoice({choices, setChosenAnswer, buttonStates, setShowError}) 
     }
 
     return (
-        <ul>
+        <ul className={styles.list + ' ' + className}>
             {answerComponents}
         </ul>
     )

@@ -1,9 +1,30 @@
+.container {
+    --border-radius: 12px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "questionNumber choices"
+        "question       choices"
+        "   .           choices"
+        "progress          .   "
+        "   .            button";
+    row-gap: 0.5rem;
+    column-gap: 10rem;
+
+    width: min(85rem, 80vw);
+}
+
 .questionNumber {
+    grid-area: questionNumber;
+
     color: var(--fontColorSecondary);
     font: var(--font-body-sm);
 }
 
 .question {
+    grid-area: question;
+    
     font: var(--font-heading-med)
 }
 
@@ -16,6 +37,9 @@
 */
 
 .progress {
+    grid-area: progress;
+    align-self: center;
+
     -webkit-appearance: none;
    appearance: none;
 
@@ -33,4 +57,21 @@
 .progress::-webkit-progress-value {
     background-color: purple;
     border-radius: 8px;
+}
+
+.multipleChoice {
+    grid-area: choices
+}
+
+.button {
+    grid-area: button;
+
+    padding: 1rem;
+
+    background-color: var(--clr-purple);
+    color: white;
+    cursor: pointer;
+    border: none;
+    font: var(--font-heading-sm);
+    border-radius: var(--border-radius);
 }

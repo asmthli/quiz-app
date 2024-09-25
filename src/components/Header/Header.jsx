@@ -6,7 +6,7 @@ function Header({titleIcon, title}) {
         <header className={styles.container}>
             <img className={styles.img} src={titleIcon} />
             <h1 className={styles.title}>{title}</h1>
-            <ToggleSwitch></ToggleSwitch>
+            <ToggleSwitch className={styles.toggle}></ToggleSwitch>
         </header>
     )
 }
