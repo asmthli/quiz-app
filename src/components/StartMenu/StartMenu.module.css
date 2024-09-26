@@ -7,7 +7,7 @@
 }
 
 .header {
-    font: var(--font-heading-lrg-regular)
+    font: var(--font-heading-lrg-regular);
 }
 
 .header span {
@@ -30,6 +30,8 @@
 
 .toggle {
     justify-self: end;
+
+    margin-bottom: 5rem;
 
     grid-row: 1;
     grid-column: 1 / span 2;;

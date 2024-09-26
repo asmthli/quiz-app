@@ -2,6 +2,7 @@ import { useState } from 'react'
 import PropTypes from 'prop-types'
 import data from '../../data.json'
 import MultipleChoice from '../MultipleChoice/MultipleChoice.jsx'
+import ErrorMessage from '../primitives/ErrorMessage/ErrorMessage.jsx'
 import Header from '../Header/Header.jsx'
 import styles from './Quiz.module.css'
 
@@ -73,7 +74,7 @@ function Quiz({subject, setQuizSubject}) {
                         <button className={styles.button} onClick={handleNext}>Next Question</button> :
                         <button className={styles.button} onClick={handleSubmit}>Submit Answer</button>
                     }
-                    {showError ? <p aria-live='polite'>Please select an answer</p> : null}
+                    {showError ? <ErrorMessage classToAdd={styles.error} /> : null}
                 </main>
             </>
         )

@@ -17,7 +17,7 @@ function Themer({children}) {
     const themes = {
         light: {
             'buttonBgColor': 'white',
-            'fontColorPrimary': 'navy',
+            'fontColorPrimary': '#313E51',
             'fontColorSecondary': 'lightslategray',
             'backgroundImg': 'url(/images/pattern-background-desktop-light.svg)',
             'backgroundColor': '#F4F6FA'

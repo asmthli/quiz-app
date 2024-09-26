@@ -8,7 +8,8 @@
         "question       choices"
         "   .           choices"
         "progress          .   "
-        "   .            button";
+        "   .            button"
+        "   .            error ";
     row-gap: 0.5rem;
     column-gap: 10rem;
 
@@ -74,4 +75,8 @@
     border: none;
     font: var(--font-heading-sm);
     border-radius: var(--border-radius);
+}
+
+.error {
+    grid-area: error;
 }

@@ -4,7 +4,8 @@
     gap: 1rem;
 
     width: 100%;
-    padding: 1rem;
+    min-height: 5.5rem;
+    padding-inline: 1rem;
 
     background-color: var(--buttonBgColor);
     border: none;
@@ -14,13 +15,20 @@
 
 .button:hover {
     cursor: pointer;
-    outline: 2px solid lime;
+    outline: 4px solid var(--clr-purple);
 }
 
 .letter {
-    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    background-color: var(--fontColorSecondary);
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1rem;
+
+    color: var(--clr-grey-300);
+    background-color: var(--clr-grey-100);
     border-radius: 6px;
 }
 
