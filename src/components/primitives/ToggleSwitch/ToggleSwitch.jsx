@@ -4,7 +4,7 @@ import darkModeMoon from '/images/icon-moon-light.svg'
 import lightModeSun from '/images/icon-sun-dark.svg'
 import lightModeMoon from '/images/icon-moon-dark.svg'
 import { useContext } from 'react'
-import { ThemeContext } from '../../../contexts/themeContext'
+import { ThemeContext } from '../../../contexts/ThemeContext.jsx'
 
 function ToggleSwitch({className}) {
     const {themeName, toggleTheme} = useContext(ThemeContext)

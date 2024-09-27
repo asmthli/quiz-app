@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { ThemeContext } from "../../../contexts/themeContext"
+import { ThemeContext } from "../../../contexts/ThemeContext.jsx"
 
 /**
  * Deals with applying global styles.
