@@ -18,10 +18,15 @@ function MultipleChoiceAnswer({letter, choice, setChosenAnswer, state, setShowEr
     }
 
     let stateImage;
+    let stateClass;
     if (state === 'correct') {
         stateImage = <img className={styles.image} src={correctImg} />
+        stateClass = styles.correct
     } else if (state === 'incorrect') {
         stateImage = <img className={styles.image} src={incorrectImg} />
+        stateClass = styles.incorrect
+    } else if (state === 'selected') {
+        stateClass = styles.selected
     }
     
 
@@ -29,7 +34,7 @@ function MultipleChoiceAnswer({letter, choice, setChosenAnswer, state, setShowEr
        <li>
             <button
                 onClick={handleClick}
-                className={styles.button}
+                className={styles.button + ' ' + stateClass}
             >
                 <p className={styles.letter}>{letter}</p>
                 <p>{choice}</p>

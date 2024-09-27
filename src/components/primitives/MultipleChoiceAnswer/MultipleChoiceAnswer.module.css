@@ -9,13 +9,15 @@
 
     background-color: var(--buttonBgColor);
     border: none;
+    outline: 4px solid var(--border-color);
     border-radius: 16px;
-    font: var(--font-heading-sm)
+    font: var(--font-heading-sm);
+    cursor: pointer;
 }
 
 .button:hover {
-    cursor: pointer;
-    outline: 4px solid var(--clr-purple);
+    --letter-bg-color: var(--clr-purple);
+    --letter-font-color: white;
 }
 
 .letter {
@@ -26,13 +28,28 @@
     width: 3rem;
     height: 3rem;
     margin-right: 1rem;
-
-    color: var(--clr-grey-300);
-    background-color: var(--clr-grey-100);
+    
+    color: var(--letter-font-color, var(--clr-grey));
+    background-color: var(--letter-bg-color);
     border-radius: 6px;
 }
 
 .image {
     margin: auto;
     margin-inline-end: 0;
+}
+
+.correct {
+    --border-color: var(--clr-green);
+    --letter-bg-color: var(--clr-green);
+}
+
+.incorrect {
+    --border-color: var(--clr-red);
+    --letter-bg-color: var(--clr-red);
+}
+
+.selected {
+    --border-color: var(--clr-purple);
+    --letter-bg-color: var(--clr-purple);
 }

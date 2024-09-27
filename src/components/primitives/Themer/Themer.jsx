@@ -24,7 +24,7 @@ function Themer({children}) {
 
         },
         dark: {
-            'buttonBgColor': 'navy',
+            'buttonBgColor': '#3B4D66',
             'fontColorPrimary': 'white',
             'fontColorSecondary': 'lightsteelblue',
             'backgroundImg': 'url(/images/pattern-background-desktop-dark.svg)',

@@ -13,6 +13,10 @@
     border: none;
 }
 
+.button:hover {
+    outline: 4px solid var(--clr-purple);
+}
+
 
 .image {
     padding: 0.5rem;
