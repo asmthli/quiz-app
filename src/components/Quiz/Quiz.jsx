@@ -63,7 +63,11 @@ function Quiz({subject, setQuizSubject}) {
     if (quizRunning) {
         return (
             <>
-                <Header titleIcon={subjectData.icon} title={subjectData.title} />
+                <Header>
+                    <Header.Icon image={subjectData.icon} />
+                    <Header.Title text={subjectData.title} />
+                </Header>
+
                 <main className={styles.container}>
                     <h2 className={styles.questionNumber}>Question {questionIndex + 1} of 10</h2>
                     <p className={styles.question}>{question}</p>
@@ -89,7 +93,10 @@ function Quiz({subject, setQuizSubject}) {
     } else {
         return (
             <>
-                <Header titleIcon={subjectData.icon} title={subjectData.title} />
+                <Header>
+                    <Header.Icon image={subjectData.icon} />
+                    <Header.Title text={subjectData.title} />
+                </Header>
 
                 <main className={styles.resultsContainer}>
                     <h2 className={styles.resultsHeader}>Quiz completed</h2>

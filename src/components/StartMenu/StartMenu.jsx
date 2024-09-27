@@ -2,23 +2,28 @@ import SelectableChoice from "../primitives/SelectableChoice/SelectableChoice.js
 import htmlImg from '/images/icon-html.svg'
 import cssImg from '/images/icon-css.svg'
 import jsImg from '/images/icon-js.svg'
+import PropTypes from 'prop-types'
 import accessibilityImg from '/images/icon-accessibility.svg'
-import ToggleSwitch from "../primitives/ToggleSwitch/ToggleSwitch.jsx"
 import {
     quizMenu,
     header,
     body,
     subjectList,
-    toggle
 } from './StartMenu.module.css'
+import Header from "../Header/Header.jsx"
+
+
+StartMenu.propTypes = {
+    setQuizSubject: PropTypes.func.isRequired
+}
 
 function StartMenu({setQuizSubject}) {
     return (
         <div className={quizMenu}>
+            <Header />
+
             <h1 className={header}>Welcome to the <span>Frontend Quiz!</span></h1>
             <p className={body}>Pick a subject to get started.</p>
-
-            <ToggleSwitch className={toggle} />
 
             <div className={subjectList}>
                 <SelectableChoice 
