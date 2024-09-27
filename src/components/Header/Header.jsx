@@ -12,10 +12,10 @@ function useHeaderContext() {
     }
 }
 
-function Header({children}) {
+function Header({children, classToAdd}) {
     return (
         <HeaderContext.Provider value={{placeholder: 'test'}}>
-            <header className={styles.container}>
+            <header className={styles.container + ' ' + classToAdd}>
                 {children}
                 <ToggleSwitch className={styles.toggle}></ToggleSwitch>
             </header>

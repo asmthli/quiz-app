@@ -4,12 +4,7 @@ import cssImg from '/images/icon-css.svg'
 import jsImg from '/images/icon-js.svg'
 import PropTypes from 'prop-types'
 import accessibilityImg from '/images/icon-accessibility.svg'
-import {
-    quizMenu,
-    header,
-    body,
-    subjectList,
-} from './StartMenu.module.css'
+import styles from './StartMenu.module.css'
 import Header from "../Header/Header.jsx"
 
 
@@ -19,13 +14,13 @@ StartMenu.propTypes = {
 
 function StartMenu({setQuizSubject}) {
     return (
-        <div className={quizMenu}>
-            <Header />
+        <div className={styles.quizMenu}>
+            <Header classToAdd={styles.header} />
 
-            <h1 className={header}>Welcome to the <span>Frontend Quiz!</span></h1>
-            <p className={body}>Pick a subject to get started.</p>
+            <h1 className={styles.title}>Welcome to the <span>Frontend Quiz!</span></h1>
+            <p className={styles.body}>Pick a subject to get started.</p>
 
-            <div className={subjectList}>
+            <div className={styles.subjectList}>
                 <SelectableChoice 
                     choice="HTML"
                     imgPath={htmlImg}

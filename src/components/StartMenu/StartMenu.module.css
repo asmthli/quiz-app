@@ -1,3 +1,7 @@
+.header {
+    grid-column: span 2;
+}
+
 .quizMenu {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -6,11 +10,12 @@
     row-gap: 2rem;
 }
 
-.header {
+.title {
     font: var(--font-heading-lrg-regular);
+    grid-row: 2;
 }
 
-.header span {
+.title span {
     display: block;
 
     font: var(--font-heading-lrg-bold);
@@ -31,22 +36,13 @@
     width: 100%;
 }
 
-.toggle {
-    justify-self: end;
-
-    margin-bottom: 5rem;
-
-    grid-row: 1;
-    grid-column: 1 / span 2;
-}
-
 @media (max-width: 1023px) {
     
     .quizMenu {
         grid-template-columns: 1fr;
         width: 90vw;
     }
-    .header {
+    .title {
         grid-column: 1;
         grid-row: 2;
     }
@@ -55,9 +51,5 @@
         grid-row: auto;
 
         width: 100%;
-    }
-
-    .toggle {
-        grid-column: 1;
     }
 }
