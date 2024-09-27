@@ -9,7 +9,7 @@ MultipleChoice.propTypes = {
     setShowError: PropTypes.func.isRequired
 }
 
-function MultipleChoice({choices, setChosenAnswer, buttonStates, setShowError, className}) {
+function MultipleChoice({choices, setChosenAnswer, buttonStates, setShowError, className, showingAnswer}) {
     const answerComponents = []
     const letters = ['G', 'F', 'E', 'D', 'C', 'B', 'A']
 
@@ -22,6 +22,7 @@ function MultipleChoice({choices, setChosenAnswer, buttonStates, setShowError, c
             setChosenAnswer={setChosenAnswer}
             state={buttonStates[choice]}
             setShowError={setShowError}
+            showingAnswer={showingAnswer}
         />
         
         answerComponents.push(answer)

@@ -33,6 +33,13 @@ function Quiz({subject, setQuizSubject}) {
         buttonStates[chosenAnswer] = 'selected'
     }
 
+    // User should not be able to change answer on answer screen.
+    function handleChooseAnswer(choice) {
+        if (!showAnswer) {
+            setChosenAnswer(choice)
+        }
+    }
+
     function handleSubmit() {
         if (!chosenAnswer) {
             setShowError(true);
@@ -65,10 +72,11 @@ function Quiz({subject, setQuizSubject}) {
                     <progress className={styles.progress} id="progress" max="10" value={questionIndex} />
                     <MultipleChoice
                         choices={options}
-                        setChosenAnswer={setChosenAnswer}
+                        setChosenAnswer={handleChooseAnswer}
                         buttonStates={buttonStates}
                         setShowError={setShowError}
                         className={styles.multipleChoice}
+                        showingAnswer={showAnswer}
                     />
                     {showAnswer ?
                         <button className={styles.button} onClick={handleNext}>Next Question</button> :
@@ -83,13 +91,13 @@ function Quiz({subject, setQuizSubject}) {
             <>
                 <Header titleIcon={subjectData.icon} title={subjectData.title} />
 
-                <main>
-                    <h2>Quiz completed</h2>
-                    <p>You scored...</p>
-                    <div>
+                <main className={styles.resultsContainer}>
+                    <h2 className={styles.resultsHeader}>Quiz completed</h2>
+                    <p className={styles.resultsSubtext}>You scored...</p>
+                    <div className={styles.resultDisplay}>
                         <img src={subjectData.icon} />
                         <h3>{subjectData.title}</h3>
-                        <p>{score} <span>out of 10</span></p>
+                        <p><span>{score}</span> out of 10</p>
                     </div>
                     <button className={styles.button} onClick={() => setQuizSubject('')}>
                         Play Again

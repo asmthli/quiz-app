@@ -80,3 +80,71 @@
 .error {
     grid-area: error;
 }
+
+
+/* 
+    Results Display
+*/
+
+.resultsContainer {
+    --border-radius: 12px;
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(4, auto);
+    column-gap: 2rem;
+}
+
+.resultsHeader {
+    font: var(--font-heading-lrg-regular);
+}
+
+.resultsSubtext {
+    font: var(--font-heading-lrg-bold);
+}
+
+.resultDisplay {
+    grid-column: 2;
+    grid-row: span 2;
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    align-items: center;
+
+    padding-inline: 8rem;  
+    padding-block: 3rem;  
+    border-radius: var(--border-radius);
+    background-color: var(--buttonBgColor);
+}
+
+.resultDisplay img {
+    grid-row: 1;
+}
+
+.resultDisplay h3 {
+    grid-row: 1;
+
+    margin-left: 0.5rem;
+}
+
+.resultDisplay p {
+    grid-column: span 2;
+    text-align: center;
+}
+
+.resultDisplay p  {
+    color: var(--fontColorSecondary)
+}
+
+.resultDisplay p span {
+    display: block;
+    font: var(--font-display);
+    color: var(--fontColorPrimary)
+    
+}
+
+.resultsContainer button {
+    grid-row: 3;
+
+    margin-top: 2rem;
+}

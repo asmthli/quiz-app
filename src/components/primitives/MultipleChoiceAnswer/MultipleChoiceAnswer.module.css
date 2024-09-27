@@ -15,11 +15,6 @@
     cursor: pointer;
 }
 
-.button:hover {
-    --letter-bg-color: var(--clr-purple);
-    --letter-font-color: white;
-}
-
 .letter {
     display: flex;
     align-items: center;
@@ -29,8 +24,8 @@
     height: 3rem;
     margin-right: 1rem;
     
-    color: var(--letter-font-color, var(--clr-grey));
-    background-color: var(--letter-bg-color);
+    color: var(--letter-font-color, var(--clr-grey-300));
+    background-color: var(--letter-bg-color, var(--clr-grey-100));
     border-radius: 6px;
 }
 
@@ -42,14 +37,23 @@
 .correct {
     --border-color: var(--clr-green);
     --letter-bg-color: var(--clr-green);
+    --letter-font-color: white;
 }
 
 .incorrect {
     --border-color: var(--clr-red);
     --letter-bg-color: var(--clr-red);
+    --letter-font-color: white;
 }
 
 .selected {
     --border-color: var(--clr-purple);
     --letter-bg-color: var(--clr-purple);
+    --letter-font-color: white;
 }
+
+.hovered {
+    --letter-bg-color: var(--clr-purple);
+    --letter-font-color: white;
+}
+
