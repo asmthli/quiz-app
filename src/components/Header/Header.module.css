@@ -1,6 +1,7 @@
 .container {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
 
     width: 100%;
@@ -13,4 +14,11 @@
 
 .title {
     font: var(--font-heading-sm);
+}
+
+
+@media (min-width: 767px) {
+    .container {
+        padding-inline: 1vw;
+    }
 }
